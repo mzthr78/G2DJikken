@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://e83px4v63okk"]
+
+[ext_resource type="PackedScene" uid="uid://hx1iand8oyab" path="res://player.tscn" id="1_wtcfe"]
+
+[sub_resource type="Gradient" id="Gradient_0e48y"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_epypp"]
+gradient = SubResource("Gradient_0e48y")
+width = 724
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wtcfe"]
+size = Vector2(722, 135.96492)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_wtcfe")]
+position = Vector2(555, 248)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(551, 528)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = SubResource("GradientTexture2D_epypp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+scale = Vector2(1, -0.456)
+shape = SubResource("RectangleShape2D_wtcfe")
